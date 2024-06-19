@@ -12,6 +12,10 @@
 4. Set up controller
 6. Define basic structure for the data
 
+## Server - C# > OOP
+
+1. Add class called "Client"
+
 ## Server - Database
 
 1. Create DB
