@@ -10,14 +10,14 @@
 2. Set up model
 3. Set up view
 4. Set up controller
-5. Set up 
 6. Define basic structure for the data
 
 ## Server - Database
 
 1. Create DB
-2. Set up table for Client
+2. Set up table for in debt people
 3. Set up table for debts
+4. Work on fields values
 
 ## Client - Site
 
