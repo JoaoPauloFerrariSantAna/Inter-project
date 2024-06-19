@@ -19,12 +19,17 @@ public class InDebtModel {
 	// XXX.XXX-YY
 	private string cpf			{ get; set; } = string.Empty;
 	private string email		{ get; set; } = string.Empty;
+	private DateTime initialDate { get; set; }	// Timestamp not null
+	private DateTime endDate { get; set; }		// Timestamp not null
 
 	// Constructor
-	public InDebtModel(string name, DateTime dataNasc, string cpf, string email) {
+	public InDebtModel(string name, DateTime dataNasc, string cpf, string email,
+						DateTime initialDate, DateTime endDate) {
 		this.name = name;
 		this.dataNasc = dataNasc;
 		this.cpf = cpf;
 		this.email = email;
+		this.initialDate = initialDate;
+		this.endDate = endDate;
 	}
 }
