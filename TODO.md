@@ -11,6 +11,7 @@
 3. Set up view
 4. Set up controller
 5. Set up 
+6. Define basic structure for the data
 
 ## Server - Database
 
