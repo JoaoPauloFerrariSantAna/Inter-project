@@ -14,21 +14,11 @@ namespace InterProject.Models;
 */
 
 public class DebtModel {
-	// Unique ID
-	private int debtId { get; set; }
-
-	// InDebt ID
-	private int inDebtedId { get; set; }
-
-	// Creditor ID
-	private int creditorId { get; set; }
-
-	// Timestamp not null
-	private DateTime initialDate { get; set; }
-
-	// Timestamp not null
-	private DateTime endDate { get; set; }
-
+	private int debtId { get; set; }			// Unique ID
+	private int inDebtedId { get; set; }		// InDebt ID
+	private int creditorId { get; set; }		// Creditor ID
+	private DateTime initialDate { get; set; }	// Timestamp not null
+	private DateTime endDate { get; set; }		// Timestamp not null
 	public double moneyAmount { get; set; }
 
 	public DebtModel(int debtId, int inDebtedId, int creditorId, 
