@@ -14,7 +14,16 @@ namespace InterProject.Models;
 
 public class InDebt {
 	private int id;
+	private int cpf;
+	private double debt_value;
+	private string name;
+	private string email;
 
-	public InDebt() {}
-
+	public InDebt(int id, int cpf, double debt_value, string name, string email) {
+		this.id = id;
+		this.cpf = cpf;
+		this.debt_value = debt_value;
+		this.name = name;
+		this.email = email;
+	}
 }
