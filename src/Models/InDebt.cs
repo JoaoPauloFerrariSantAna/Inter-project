@@ -1,4 +1,4 @@
-using System.Component.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace InterProject.Models;
 
@@ -9,21 +9,22 @@ namespace InterProject.Models;
  * - Um nome
  * - Um CPF
  * - Um email
+ * - Uma data de nascimento
  * - O valor da dívida
 */
 
-public class InDebt {
-	private int id;
-	private int cpf;
-	private double debt_value;
-	private string name;
-	private string email;
+public class InDebtModel {
+	public string name			{ get; set; } = string.Empty;
+	public DateTime? dataNasc	{ get; set; }
+	// XXX.XXX-YY
+	private string cpf			{ get; set; } = string.Empty;
+	private string email		{ get; set; } = string.Empty;
 
-	public InDebt(int id, int cpf, double debt_value, string name, string email) {
-		this.id = id;
-		this.cpf = cpf;
-		this.debt_value = debt_value;
+	// Constructor
+	public InDebtModel(string name, DateTime dataNasc, string cpf, string email) {
 		this.name = name;
+		this.dataNasc = dataNasc;
+		this.cpf = cpf;
 		this.email = email;
 	}
 }
