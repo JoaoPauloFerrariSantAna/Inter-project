@@ -10,11 +10,12 @@
 2. Set up model
 3. Set up view
 4. Set up controller
-6. Define basic structure for the data
+5. Define basic structure for the data
 
-## Server - C# > OOP
+### Server - C# > OOP
 
 1. Add class called "Client"
+2. Add an ENUM to dictate the client role ("in debt" or "creditor")
 
 ## Server - Database
 
