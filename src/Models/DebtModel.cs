@@ -15,18 +15,18 @@ namespace InterProject.Models;
 
 public class DebtModel {
 	private int debtId { get; set; }			// Unique ID
-	private int inDebtedId { get; set; }		// InDebt ID
-	private int creditorId { get; set; }		// Creditor ID
+	private int indebtedId { get; set; }		// FK
+	private int creditorId { get; set; }		// FK
 	private DateTime initialDate { get; set; }	// Timestamp not null
 	private DateTime endDate { get; set; }		// Timestamp not null
-	public double moneyAmount { get; set; }
+	public double ammount { get; set; }
 
-	public DebtModel(int debtId, int inDebtedId, int creditorId, 
-					double moneyAmount, DateTime initialDate, DateTime endDate) {
+	public DebtModel(int debtId, int indebtedId, int creditorId,
+					double ammount, DateTime initialDate, DateTime endDate) {
 		this.debtId = debtId;
-		this.inDebtedId = inDebtedId;
+		this.indebtedId = indebtedId;
 		this.creditorId = creditorId;
-		this.moneyAmount = moneyAmount;
+		this.ammount = ammount;
 		this.initialDate = initialDate;
 		this.endDate = endDate;
 	}
