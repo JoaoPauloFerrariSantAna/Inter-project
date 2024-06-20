@@ -6,6 +6,16 @@ _TL;DR_
 
 ## About the project
 
-### Tools used in this project
+## Tools used
+
+### Languages
 
 - C# (dotnet CORE)
+
+### Repository
+
+- GITHUB
+
+## VCS
+
+- GIT
