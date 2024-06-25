@@ -1,44 +1,40 @@
-var builder = WebApplication.CreateBuilder(args);
+//
+// using NHibernate
+// using NHibernate.Cfg;
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+namespace Program;
 
-var app = builder.Build();
+public class Program {
+	public static WebApplication ConfigureProgramBuild(WebApplicationBuilder builder) {
+		WebApplication app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+		// Configure the HTTP request pipeline.
+		if (app.Environment.IsDevelopment())
+		{
+			app.UseSwagger();
+			app.UseSwaggerUI();
+		}
 
-app.UseHttpsRedirection();
+		app.UseHttpsRedirection();
+		
+		return app;
+	}
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+	public static WebApplicationBuilder MakeProgramBuilder(string[] args) {
+		WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+		// Add services to the container.
+		// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+		builder.Services.AddEndpointsApiExplorer();
+		builder.Services.AddSwaggerGen();
 
-app.Run();
+		return builder;
+	}
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+	public static void Main(string[] args) {
+		WebApplicationBuilder builder	= MakeProgramBuilder(args);
+		WebApplication app				= ConfigureProgramBuild(builder);
+
+		app.Run();
+	}
 }
